@@ -15,8 +15,13 @@ public class Grupo implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	@NotEmpty
+	@Column(length = 100)
 	private String grupo;
+	@NotEmpty
+	@Column(length = 100)
 	private String equipof;
 //	@OneToMany(fetch =FetchType.EAGER)
 //	@JoinColumn(name ="id_equipo")

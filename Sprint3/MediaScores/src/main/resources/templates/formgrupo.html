@@ -8,27 +8,32 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 <link rel="stylesheet" href="assets/css/style.css">
-<title>Inscripcion Equipo</title>
+<title>Grupo</title>
 </head>
 <body>
 
 
 
 <div class="container">
-  <h2>Inscripcion Equipo</h2>
+  <h2>Crear Grupo</h2>
   
-  <form th:action="@{/formequipo}" th:object="${equipo}" method="post">
+  <form th:action="@{/formgrupo}" th:object="${grupo}" method="post">
     
-    
-    <div class="form-group">
-      <label for="pais">Pais:</label>
-      <input type="text" class="form-control" th:field="*{pais}"  id="pais" placeholder="Digite El Pais" name="mail" th:errorclass="'form-control alert-danger'" /> <small
+     <div class="form-group">
+      <label for="equipof">Equipo:</label>
+      <input type="text" class="form-control" th:field="*{equipof}"  id="equipof" placeholder="Digite El Pais" name="grupo" th:errorclass="'form-control alert-danger'" /> <small
 class="form-text text-danger"
-th:if="${#fields.hasErrors('pais')}" th:errors="*{pais}"></small>
+th:if="${#fields.hasErrors('equipof')}" th:errors="*{equipof}"></small>
+    </div> 
+    <div class="form-group">
+      <label for="grupo">Grupo:</label>
+      <input type="text" class="form-control" th:field="*{grupo}"  id="grupo" placeholder="Digite El Pais" name="grupo" th:errorclass="'form-control alert-danger'" /> <small
+class="form-text text-danger"
+th:if="${#fields.hasErrors('grupo')}" th:errors="*{grupo}"></small>
     </div>    
     
     <button type="submit" class="btn btn-primary">Guardar</button>
-    <button type="button" class="btn btn-warning"  onclick="window.location.href='/listarequipo'">Listar Equipos</button>
+    <button type="button" class="btn btn-warning"  onclick="window.location.href='/listargrupo'">Listar Grupos</button>
   </form>
 </div>
 
