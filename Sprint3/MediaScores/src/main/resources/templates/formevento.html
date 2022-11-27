@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="Description" content="Enter your description here"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="assets/css/style.css">
+<title>Evento</title>
+</head>
+<body>
+
+
+
+<div class="container">
+  <h2>Formulario Crud Mintic JOnh</h2>
+  
+  <form th:action="@{/formevento}" th:object="${evento}" method="post">
+    
+    
+    <div class="form-group">
+      <label for="equipo1">Equipo 1:</label>
+      <input type="text" class="form-control" th:field="*{equipo1}"  id="equipo1" placeholder="Digite Equipo 1" name="equipo1" th:errorclass="'form-control alert-danger'" /> <small
+class="form-text text-danger"
+th:if="${#fields.hasErrors('equipo1')}" th:errors="*{equipo1}"></small>
+    </div>    
+     <div class="form-group">
+      <label for="equipo2">Equipo 2:</label>
+      <input type="text" class="form-control" th:field="*{equipo2}"  id="equipo2" placeholder="Digite Equipo 2" name="equipo2" th:errorclass="'form-control alert-danger'" /> <small
+class="form-text text-danger"
+th:if="${#fields.hasErrors('equipo2')}" th:errors="*{equipo2}"></small>
+    </div>   
+    <div class="form-group">
+      <label for="fecha">fecha:</label>
+      <input type="text" class="form-control" th:field="*{fecha}"  id="fecha" placeholder="Digite la fecha" name="fecha" th:errorclass="'form-control alert-danger'" /> <small
+class="form-text text-danger"
+th:if="${#fields.hasErrors('fecha')}" th:errors="*{fecha}"></small>
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Guardar</button>
+    <button type="button" class="btn btn-warning"  onclick="window.location.href='/listarevento'">Listar Eventos</button>
+  </form>
+</div>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+</body>
+</html>
