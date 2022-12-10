@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="Description" content="Enter your description here"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="assets/css/style.css">
+<title>Lista Grupos</title>
+</head>
+<body>
+<h1 class="container bg-success text-center">Lista Grupos</h1>
+<div class="container">
+<table class="table table-striped">
+			<thead class="bg-danger">
+				<tr>
+					<th>id</th>
+					<th>pais</th>
+					<th>grupo</th>							
+					<th>Editar</th>
+					<th>Eliminar</th>
+					</tr>
+			</thead>
+			<tbody>
+				<tr th:each="grupo: ${grupo}">
+					<td th:text="${grupo.id}"></td>
+					<td th:text="${grupo.equipof}"></td>
+					<td th:text="${grupo.grupo}"></td>
+					<td><a class="btn btn-primary btn-xs" th:href="@{/formgrupo/} + ${grupo.id}" th:text="'editar'"></a></td>
+					<td><a class="btn btn-danger btn-xs" th:href="@{/eliminargrupo/} + ${grupo.id}" th:text="'eliminar'" onclick="return confirm('Estás seguro que quieres eliminar?');"></a></td>		
+				
+					
+				</tr>
+			</tbody>
+
+		</table>
+<button type="button" class="btn btn-warning"  onclick="window.location.href='/formgrupo'">Form grupo</button>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+</body>
+</html>
